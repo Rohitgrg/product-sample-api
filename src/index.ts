@@ -1,12 +1,13 @@
 import express, { Express } from "express";
+import md from "markdown-it";
+import fs from "fs";
+import path from "path";
+
 import { Configuration } from "./config/configuration";
 import { DatabaseUtil, IDbConfig } from "./db/db";
 import { ApplicationRouter } from "./router/router";
 import { authenticate } from "./middleware/auth";
 import { errorHandler } from "./plugins/errorHandler";
-import md from "markdown-it";
-import fs from "fs";
-import path from "path";
 class Server {
   public static async startServer() {
     const application: Express = express();

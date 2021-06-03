@@ -4,6 +4,7 @@ import { IProduct } from "../interface/product";
 import { ICreateProductRequest } from "../requests/createProductRequest";
 import { IUpdateProductRequest } from "../requests/updateProductRequest";
 
+// controller class directing the flow of data from products api to services
 export class ProductController {
   private _productService: ProductService;
 
@@ -11,6 +12,7 @@ export class ProductController {
     this._productService = new ProductService();
   }
 
+  // gets a list of available products from the product service
   public async getAllProduct(req: Request, res: Response) {
     try {
       const products: IProduct[] = await this._productService.getAllProduct();
@@ -21,6 +23,7 @@ export class ProductController {
     }
   }
 
+  // gets the products from the product service based on the id provided from the route
   public async getProduct(req: Request, res: Response) {
     try {
       const productId: string = req.params.id;
@@ -35,6 +38,7 @@ export class ProductController {
     }
   }
 
+  // validates the request body to create a new product
   public async createProduct(req: Request, res: Response) {
     try {
       if (!req.body) throw new Error("Invalid Request");
@@ -55,6 +59,7 @@ export class ProductController {
     }
   }
 
+  // validates the request body and param to find and update the product
   public async updateProduct(req: Request, res: Response) {
     try {
       const updates: IUpdateProductRequest = {
@@ -73,6 +78,7 @@ export class ProductController {
     }
   }
 
+  // uses the product id from the request param to delete a product
   public async deleteProduct(req: Request, res: Response) {
     try {
       const product: IProduct = await this._productService.deleteProduct(

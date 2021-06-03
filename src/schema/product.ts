@@ -1,6 +1,7 @@
 import mongoose, { Document, Schema } from "mongoose";
 import { IProduct } from "../interface/product";
 
+// product schema for the database
 const productSchema: Schema = new Schema({
   name: String,
   description: String,

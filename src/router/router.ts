@@ -1,6 +1,7 @@
 import express, { NextFunction, Request, Response, Router } from "express";
 import { ProductController } from "../controller/product-controller";
 
+// router class to group all the routes together forming apis
 export class ApplicationRouter {
   private _router: Router = express.Router();
   private _productController: ProductController = new ProductController();
@@ -13,6 +14,7 @@ export class ApplicationRouter {
     return this._router;
   }
 
+  // initialize the routes needed in this application
   private initProductRouter() {
     this._router
       .route("/products")

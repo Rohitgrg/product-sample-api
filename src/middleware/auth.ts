@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import { Configuration } from "../config/configuration";
 
+// middleware to get the token and validate it with secret hidden in our environment variable
 export const authenticate = (
   req: Request,
   res: Response,
@@ -14,7 +15,7 @@ export const authenticate = (
   }
 
   // if exists extract the token from header
-  const token = authHeader; // Authorization: Bearer liqjwf9p4jfpc4hie9vhenpwoid
+  const token = authHeader;
   if (!token || token === "") {
     return next(authError);
   }

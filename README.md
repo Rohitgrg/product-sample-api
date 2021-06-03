@@ -17,6 +17,8 @@ A simple application written in typescript which provides create,read, update an
 
 ## APIs:
 
+`All Apis are secured with a authorization token except the base Url.`
+
 - **base API:** `GET` https://product-api-app-eclipx.herokuapp.com/
 
   - This api will return a home page with this readme page as its content.
@@ -121,4 +123,7 @@ Clean architecture was kept in mind while creating this layout. **Scalability** 
 
 ## Dependencies:
 
-1.**Express**: This framework was used for the effective handling of requests through the help of its predefined utility methods and its ease of use. 2. **dotenv**: This library was used to load the environment varibles from ".env" file. 3. **markdown-it**: This was used to convert this readme.md file to a html page which was then used as a home page. 4. **mongoose**: This Object Data Modeling library was used to communicate with mongoDB from this node application.
+1. **Express**: This framework was used for the effective handling of requests through the help of its predefined utility methods and its ease of use.
+2. **dotenv**: This library was used to load the environment varibles from ".env" file.
+3. **markdown-it**: This was used to convert this readme.md file to a html page which was then used as a home page.
+4. **mongoose**: This Object Data Modeling library was used to communicate with mongoDB from this node application.

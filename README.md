@@ -65,15 +65,15 @@ A curl script file is provided in the repo named **test-curl.sh**,
 which tests all the above mentioned apis.
 
 ```
-curl -H "Authorization: eclipxtest" http://localhost:5000/api/products/
+curl -H "Authorization: eclipxtest" https://product-api-app-eclipx.herokuapp.com/api/products/
 
-curl -d '{"name": "test","description": "test product","price": 5}' -H "Authorization: eclipxtest" -H "Content-Type: application/json" http://localhost:5000/api/products/
+curl -d '{"name": "test","description": "test product","price": 5}' -H "Authorization: eclipxtest" -H "Content-Type: application/json" https://product-api-app-eclipx.herokuapp.com/api/products/
 
-curl -d '{"name": "test","description": "new description happened","price": 5}' -H "Authorization: eclipxtest" -H "Content-Type: application/json" -X PUT http://localhost:5000/api/products/60b8a70f72eae40ba0ad6ccc
+curl -d '{"name": "test","description": "new description happened","price": 5}' -H "Authorization: eclipxtest" -H "Content-Type: application/json" -X PUT https://product-api-app-eclipx.herokuapp.com/api/products/60b8a70f72eae40ba0ad6ccc
 
-curl -H "Authorization: eclipxtest" http://localhost:5000/api/products/60b8a70f72eae40ba0ad6ccc
+curl -H "Authorization: eclipxtest" https://product-api-app-eclipx.herokuapp.com/api/products/60b8a70f72eae40ba0ad6ccc
 
-curl -H "Authorization: eclipxtest" -X DELETE http://localhost:5000/api/products/60b8a70f72eae40ba0ad6ccc
+curl -H "Authorization: eclipxtest" -X DELETE https://product-api-app-eclipx.herokuapp.com/api/products/60b8a70f72eae40ba0ad6ccc
 ```
 
 ## Installations and Setup Instructions
@@ -127,3 +127,7 @@ Clean architecture was kept in mind while creating this layout. **Scalability** 
 2. **dotenv**: This library was used to load the environment varibles from ".env" file.
 3. **markdown-it**: This was used to convert this readme.md file to a html page which was then used as a home page.
 4. **mongoose**: This Object Data Modeling library was used to communicate with mongoDB from this node application.
+
+## Pipeline:
+
+    Built in heroku pipeline is used to deploy the application when the master brach is updated.
